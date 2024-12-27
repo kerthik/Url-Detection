@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>URL Detector</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://r2.erweima.ai/imgcompressed/compressed_1c760e822b5c502ee61d52f8f10f362b.webp" rel="icon">
+  <link href="https://r2.erweima.ai/imgcompressed/compressed_1c760e822b5c502ee61d52f8f10f362b.webp" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="static/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      
+      <h1 class="logo mr-auto"><a href="{{ url_for('home') }}">URL Detector</a></h1>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+          
+          <li><a href="{{ url_for('usecases') }}" target="_blank" rel="no-openner no-referrer">Features</a></li>
+         
+          
+
+        </ul>
+      </nav>
+
+    
+    </div>
+  </header>
+
+ 
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+      <h1 style="margin-top:10px; font-size: large;">Check its legitimacy and security</h1>
+            <form action="/result" method="POST" role="form" class="form">
+        <div class="row no-gutters">
+          <div class="col-md-6 form-group pr-md-1">
+              <input type="url" name="name" class="form-control" id="name" placeholder="Enter the URL " required>
+          </div>
+        </div>
+        <div class="text-center"><button type="submit">Check</button></div>
+        <p>
+          {% if name %}
+          <b><p>{{name[0]}}</p></b>
+          <h2 style="color:blue;">Website is {{name[1]}} to use</h2><br>
+            {% if name[3] %}
+            <button class="button1" onclick="window.open('{{name[0]}}')" target="_blank" >{{name[2]}}</button><br>
+            {% else %}
+            <button class="button2" onclick="window.open('{{name[0]}}')" target="_blank" >{{name[2]}}</button><br>
+            {% endif %}
+          {% endif %}
+      </p>
+      </form> 
+      <!-- <img src="static\assets\img\Phishing.gif" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150"><br><br><br> -->
+    </div>
+    <script>
+
+        
+    </script>
+  </section><!-- End Hero -->
+
+     <!-- ======= Frequently Asked Questions Section ======= -->
+  
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container d-md-flex py-4">
+
+      <div class="text-center text-md-center">
+        
+		  <p style="padding-top: 5px; font-weight: 600;"><a style="text-decorations:none; color:inherit;" href="https://github.com/asrith-reddy" ></a></p><a href="https://github.com/bikilas/Phishing-Website-Detection/branches" ><button style="font-size:15px" class="button3">Source Code <i class="fa fa-github"></i></button></a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+ 
+
+
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
